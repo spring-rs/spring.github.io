@@ -1,0 +1,195 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://spring-rs.github.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><meta content=9BE3AFA1A1AE6AF5B38F990F208A4EE1 name=msvalidate.01><title>spring-web插件</title><meta content=web插件如何使用 name=description><link href=https://spring-rs.github.io/zh/docs/plugins/spring-web/ rel=canonical><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://spring-rs.github.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Zh",
+            "item": "https://spring-rs.github.io/zh/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Docs",
+            "item": "https://spring-rs.github.io/zh/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Plugins",
+            "item": "https://spring-rs.github.io/zh/docs/plugins/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  5 ,
+            "name": "Spring Web",
+            "item": "https://spring-rs.github.io/zh/docs/plugins/spring-web/"
+          },
+        
+      
+    
+  }
+</script><script>var _hmt=_hmt||[];(()=>{let c=`script`;var a=document.createElement(c);a.src=`https://hm.baidu.com/hm.js?2fd7792d4246d07ebbd9db04334ac94d`;var b=document.getElementsByTagName(c)[0];b.parentNode.insertBefore(a,b)})()</script><script>((a,b,c,d,e,f,g)=>{a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};f=b.createElement(d);f.async=1;f.src=`https://www.clarity.ms/tag/`+ e;g=b.getElementsByTagName(d)[0];g.parentNode.insertBefore(f,g)})(window,document,`clarity`,`script`,`nl0r1el6gp`)</script><meta content=#fff name=theme-color><meta content=#2b5797 name=msapplication-TileColor><link href=https://spring-rs.github.io/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://spring-rs.github.io/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://spring-rs.github.io/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link color=#5bbad5 href=https://spring-rs.github.io/safari-pinned-tab.svg rel=mask-icon><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://spring-rs.github.io/zh>spring-rs</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class="nav-item dropdown"><a class=nav-link href=#> <svg viewbox="0 0 1024 1024" fill=currentColor height=20 version=1.1 width=20 xmlns=http://www.w3.org/2000/svg><path d="M549.12 643.2l-108.373333-107.093333 1.28-1.28c74.24-82.773333 127.146667-177.92 158.293333-278.613334H725.333333V170.666667H426.666667V85.333333h-85.333334v85.333334H42.666667v84.906666h476.586666A673.834667 673.834667 0 0 1 384 484.266667a672.853333 672.853333 0 0 1-98.56-142.933334h-85.333333c31.146667 69.546667 73.813333 135.253333 127.146666 194.56L110.293333 750.293333 170.666667 810.666667l213.333333-213.333334 132.693333 132.693334 32.426667-86.826667zM789.333333 426.666667h-85.333333l-192 512h85.333333l48-128h202.666667L896 938.666667h85.333333l-192-512z m-112 298.666666L746.666667 540.373333 816 725.333333h-138.666667z"></path></svg> </a> <div class=dropdown-menu><a class=dropdown-item href=https://spring-rs.github.io/docs/plugins/spring-web/>English</a></div><li class=nav-item><a class=nav-link href=https://github.com/spring-rs/spring-rs><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item docs active"><a class=nav-link href=https://spring-rs.github.io/zh/docs/getting-started/introduction/>文档</a><li class=nav-item><a class=nav-link href=https://spring-rs.github.io/zh/blog/>博客</a></ul><div class="break order-6 d-md-none"></div></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav aria-label="Main navigation" class=docs-links><h3>入门指南</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/introduction/>介绍</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/>快速上手</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/di/>依赖注入</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/config/>加载配置</a></ul><h3>插件</h3><ul class=list-unstyled><li><a class="docs-link active" href=https://spring-rs.github.io/zh/docs/plugins/spring-web/>spring-web插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-sqlx/>spring-sqlx插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-postgres/>spring-postgres插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-sea-orm/>spring-sea-orm插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-redis/>spring-redis插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-job/>spring-job插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-stream/>spring-stream插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-mail/>spring-mail插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-logger/>logger插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-opentelemetry/>opentelemetry插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/plugin-by-self/>编写自己的插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/contribute-plugins/>社区贡献的插件</a></ul><h3>帮助</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/help/auto-reload/>自动热重启</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/help/faq/>常见问题</a></ul></nav></div><nav aria-label="Secondary navigation" class="docs-toc d-none d-xl-block col-xl-3"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>spring-web插件</h1><p class=lead>spring-web是基于<a href=https://github.com/tokio-rs/axum target=_blank>axum</a>实现的<p><a href=https://crates.io/crates/spring-web><img alt=crates.io src=https://img.shields.io/crates/v/spring-web.svg></a> <a href=https://docs.rs/spring-web><img alt=Documentation src=https://docs.rs/spring-web/badge.svg></a><p><a href=https://github.com/tokio-rs/axum>Axum</a>是rust社区最优秀的Web框架之一，它是由tokio官方维护的一个基于<a href=https://github.com/hyperium/hyper>hyper</a>的子项目。Axum提供了web路由，声明式的HTTP请求解析，HTTP响应的序列化等功能，而且能够与<a href=https://github.com/tower-rs>tower</a>生态中的中间件结合。<h2 id=yi-lai>依赖</h2><pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span style=color:#bf616a>spring-web </span><span>= { </span><span style=color:#bf616a>version </span><span>= "</span><span style=color:#a3be8c>&LTversion></span><span>" }
+</span></code></pre><p>可选的<strong>features</strong>: <code>http2</code>、<code>multipart</code>、<code>ws</code>。<h2 id=pei-zhi-xiang>配置项</h2><pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span>[web]
+</span><span style=color:#bf616a>binding </span><span>= "</span><span style=color:#a3be8c>172.20.10.4</span><span>"  </span><span style=color:#65737e># 要绑定的网卡IP地址，默认0.0.0.0
+</span><span style=color:#bf616a>port </span><span>= </span><span style=color:#d08770>8000              </span><span style=color:#65737e># 要绑定的端口号，默认8080
+</span><span style=color:#bf616a>connect_info </span><span>= </span><span style=color:#d08770>false     </span><span style=color:#65737e># 是否使用客户端连接信息，默认false
+</span><span style=color:#bf616a>graceful </span><span>= </span><span style=color:#d08770>true          </span><span style=color:#65737e># 是否开启优雅停机, 默认false
+</span><span>
+</span><span style=color:#65737e># web中间件配置
+</span><span>[web.middlewares]
+</span><span style=color:#bf616a>compression </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true </span><span>}  </span><span style=color:#65737e># 开启压缩中间件
+</span><span style=color:#bf616a>catch_panic </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true </span><span>}  </span><span style=color:#65737e># 捕获handler产生的panic
+</span><span style=color:#bf616a>logger </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true</span><span>, </span><span style=color:#bf616a>level </span><span>= "</span><span style=color:#a3be8c>info</span><span>" }            </span><span style=color:#65737e># 开启日志中间件
+</span><span style=color:#bf616a>limit_payload </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true</span><span>, </span><span style=color:#bf616a>body_limit </span><span>= "</span><span style=color:#a3be8c>5MB</span><span>" } </span><span style=color:#65737e># 限制请求体大小
+</span><span style=color:#bf616a>timeout_request </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true</span><span>, </span><span style=color:#bf616a>timeout </span><span>= </span><span style=color:#d08770>60000 </span><span>}  </span><span style=color:#65737e># 请求超时时间60s
+</span><span>
+</span><span style=color:#65737e># 跨域配置
+</span><span style=color:#bf616a>cors </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true</span><span>, </span><span style=color:#bf616a>allow_origins </span><span>= [
+</span><span>    "</span><span style=color:#a3be8c>*.github.io</span><span>",
+</span><span>], </span><span style=color:#bf616a>allow_headers </span><span>= [
+</span><span>    "</span><span style=color:#a3be8c>Authentication</span><span>",
+</span><span>], </span><span style=color:#bf616a>allow_methods </span><span>= [
+</span><span>    "</span><span style=color:#a3be8c>GET</span><span>",
+</span><span>    "</span><span style=color:#a3be8c>POST</span><span>",
+</span><span>], </span><span style=color:#bf616a>max_age </span><span>= </span><span style=color:#d08770>60 </span><span>}
+</span><span>
+</span><span style=color:#65737e># 静态资源配置
+</span><span style=color:#bf616a>static </span><span>= { </span><span style=color:#bf616a>enable </span><span>= </span><span style=color:#d08770>true</span><span>, </span><span style=color:#bf616a>uri </span><span>= "</span><span style=color:#a3be8c>/static</span><span>", </span><span style=color:#bf616a>path </span><span>= "</span><span style=color:#a3be8c>static</span><span>", </span><span style=color:#bf616a>precompressed </span><span>= </span><span style=color:#d08770>true</span><span>, </span><span style=color:#bf616a>fallback </span><span>= "</span><span style=color:#a3be8c>index.html</span><span>" }
+</span></code></pre><blockquote><p><strong>NOTE</strong>: 通过上面的middleware配置可以集成tower生态中提供的中间件。当然如果你对tower生态非常熟悉，也可以不启用这些middleware，通过编写代码自行配置。下面是相关的文档链接：<ul><li><a href=https://docs.rs/tower/latest/tower/>tower</a><li><a href=https://docs.rs/tower-http/latest/tower_http/>tower-http</a></ul></blockquote><h2 id=apijie-kou>API接口</h2><p>App实现了<a href=https://docs.rs/spring-web/latest/spring_web/trait.WebConfigurator.html>WebConfigurator</a>特征，可以通过该特征指定路由配置：<pre class=language-rust data-lang=rust data-linenos style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><table><tbody><tr><td>1<td><span>#[</span><span style=color:#bf616a>tokio</span><span>::</span><span style=color:#bf616a>main</span><span>]
+</span><tr><td>2<td><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>main</span><span>() {
+</span><tr><td>3<td><span>    App::new()
+</span><tr><td>4<td><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(SqlxPlugin)
+</span><tr><td>5<td><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(WebPlugin)
+</span><tr><td><mark style=background-color:#65737e30>6</mark><td><mark style=background-color:#65737e30><span>        .</span><span style=color:#96b5b4>add_router</span><span>(</span><span style=color:#96b5b4>router</span><span>())
+</span></mark><tr><td>7<td><span>        .</span><span style=color:#96b5b4>run</span><span>()
+</span><tr><td>8<td><span>        .await
+</span><tr><td>9<td><span>}
+</span><tr><td><mark style=background-color:#65737e30>10</mark><td><mark style=background-color:#65737e30><span>
+</span></mark><tr><td><mark style=background-color:#65737e30>11</mark><td><mark style=background-color:#65737e30><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>router</span><span>() -> Router {
+</span></mark><tr><td><mark style=background-color:#65737e30>12</mark><td><mark style=background-color:#65737e30><span>    Router::new().</span><span style=color:#96b5b4>typed_route</span><span>(hello_word)
+</span></mark><tr><td><mark style=background-color:#65737e30>13</mark><td><mark style=background-color:#65737e30><span>}
+</span></mark><tr><td><mark style=background-color:#65737e30>14</mark><td><mark style=background-color:#65737e30><span>
+</span></mark><tr><td><mark style=background-color:#65737e30>15</mark><td><mark style=background-color:#65737e30><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/</span><span>")]
+</span></mark><tr><td><mark style=background-color:#65737e30>16</mark><td><mark style=background-color:#65737e30><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>hello_word</span><span>() -> impl IntoResponse {
+</span></mark><tr><td><mark style=background-color:#65737e30>17</mark><td><mark style=background-color:#65737e30><span>    "</span><span style=color:#a3be8c>hello word</span><span>"
+</span></mark><tr><td><mark style=background-color:#65737e30>18</mark><td><mark style=background-color:#65737e30><span>}
+</span></mark></table></code></pre><p>你也可以使用<code>auto_config</code>宏来实现自动配置，这个过程宏会自动将被过程宏标记的路由注册进app中：<pre class=language-diff data-lang=diff style=color:#c0c5ce;background-color:#2b303b><code class=language-diff data-lang=diff><span style=color:#a3be8c>+#[auto_config(WebConfigurator)]
+</span><span> #[tokio::main]
+</span><span> async fn main() {
+</span><span>     App::new()
+</span><span>         .add_plugin(SqlxPlugin)
+</span><span>         .add_plugin(WebPlugin)
+</span><span style=color:#bf616a>-        .add_router(router())
+</span><span>         .run()
+</span><span>         .await
+</span><span>}
+</span></code></pre><h2 id=shu-xing-hong>属性宏</h2><p>上面例子中的<a href=https://docs.rs/spring-macros/latest/spring_macros/attr.get.html><code>get</code></a>是一个属性宏，<code>spring-web</code>提供了八个标准HTTP METHOD的过程宏：<code>get</code>、<code>post</code>、<code>patch</code>、<code>put</code>、<code>delete</code>、<code>head</code>、<code>trace</code>、<code>options</code>。<p>也可以使用<a href=https://docs.rs/spring-macros/latest/spring_macros/attr.route.html><code>route</code></a>宏同时绑定多个method：<pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span style=color:#b48ead>use </span><span>spring_web::route;
+</span><span style=color:#b48ead>use </span><span>spring_web::axum::response::IntoResponse;
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>route</span><span>("</span><span style=color:#a3be8c>/test</span><span>", method = "</span><span style=color:#a3be8c>GET</span><span>", method = "</span><span style=color:#a3be8c>HEAD</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>example</span><span>() -> impl IntoResponse {
+</span><span>    "</span><span style=color:#a3be8c>hello world</span><span>"
+</span><span>}
+</span></code></pre><p>除此之外，spring还支持一个handler绑定多个路由，这需要用到<a href=https://docs.rs/spring-macros/latest/spring_macros/attr.routes.html><code>routes</code></a>属性宏：<pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span style=color:#b48ead>use </span><span>spring_web::{routes, get, delete};
+</span><span style=color:#b48ead>use </span><span>spring_web::axum::response::IntoResponse;
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>routes</span><span>]
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/test</span><span>")]
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/test2</span><span>")]
+</span><span>#[</span><span style=color:#bf616a>delete</span><span>("</span><span style=color:#a3be8c>/test</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>example</span><span>() -> impl IntoResponse {
+</span><span>    "</span><span style=color:#a3be8c>hello world</span><span>"
+</span><span>}
+</span></code></pre><h2 id=ti-qu-cha-jian-zhu-ce-de-component>提取插件注册的Component</h2><p>上面的例子中<code>SqlxPlugin</code>插件为我们自动注册了一个Sqlx连接池组件，我们可以使用<code>Component</code>从State中提取这个连接池，<a href=https://docs.rs/spring-web/latest/spring_web/extractor/struct.Component.html><code>Component</code></a>是一个axum的<a href=https://docs.rs/axum/latest/axum/extract/index.html>extractor</a>。<pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/version</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>mysql_version</span><span>(Component(</span><span style=color:#bf616a>pool</span><span>): Component&LTConnectPool>) -> Result&LTString> {
+</span><span>    </span><span style=color:#b48ead>let</span><span> version = sqlx::query("</span><span style=color:#a3be8c>select version() as version</span><span>")
+</span><span>        .</span><span style=color:#96b5b4>fetch_one</span><span>(&pool)
+</span><span>        .await
+</span><span>        .</span><span style=color:#96b5b4>context</span><span>("</span><span style=color:#a3be8c>sqlx query failed</span><span>")?
+</span><span>        .</span><span style=color:#96b5b4>get</span><span>("</span><span style=color:#a3be8c>version</span><span>");
+</span><span>    Ok(version)
+</span><span>}
+</span></code></pre><p>axum也提供了其他的<a href=https://docs.rs/axum/latest/axum/extract/index.html>extractor</a>，这些都被reexport到了<a href=https://docs.rs/spring-web/latest/spring_web/extractor/index.html><code>spring_web::extractor</code></a>下。<h2 id=du-qu-pei-zhi>读取配置</h2><p>你可以用<a href=https://docs.rs/spring-web/latest/spring_web/extractor/struct.Config.html><code>Config</code></a>抽取toml中的配置。<pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span>#[</span><span style=color:#bf616a>derive</span><span>(Debug, Configurable, Deserialize)]
+</span><span>#[</span><span style=color:#bf616a>config_prefix </span><span>= "</span><span style=color:#a3be8c>custom</span><span>"]
+</span><span style=color:#b48ead>struct </span><span>CustomConfig {
+</span><span>    </span><span style=color:#bf616a>a</span><span>: </span><span style=color:#b48ead>u32</span><span>,
+</span><span>    </span><span style=color:#bf616a>b</span><span>: </span><span style=color:#b48ead>bool</span><span>,
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/config</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>use_toml_config</span><span>(Config(</span><span style=color:#bf616a>conf</span><span>): Config&LTCustomConfig>) -> impl IntoResponse {
+</span><span>    format!("</span><span style=color:#a3be8c>a=</span><span style=color:#d08770>{}</span><span style=color:#a3be8c>, b=</span><span style=color:#d08770>{}</span><span>", conf.a, conf.b)
+</span><span>}
+</span></code></pre><p>在你的配置文件中添加相应配置：<pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span>[custom]
+</span><span style=color:#bf616a>a </span><span>= </span><span style=color:#d08770>1
+</span><span style=color:#bf616a>b </span><span>= </span><span style=color:#d08770>true
+</span></code></pre><p>完整代码参考<a href=https://github.com/spring-rs/spring-rs/tree/master/examples/web-example><code>web-example</code></a><h2 id=zai-middlewarezhong-shi-yong-componentchou-qu-zhu-ce-de-zu-jian>在Middleware中使用Component抽取注册的组件</h2><p>你也可以在<a href=https://docs.rs/axum/latest/axum/middleware/fn.from_fn.html>middleware中使用Extractor</a>，注意需要遵循axum的规则。<pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span style=color:#b48ead>use </span><span>spring_web::{axum::{response::Response, middleware::Next}, extractor::{Request, Component}};
+</span><span style=color:#b48ead>use </span><span>spring_sqlx::ConnectPool;
+</span><span>
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>problem_middleware</span><span>(Component(</span><span style=color:#bf616a>db</span><span>): Component&LTConnectPool>, </span><span style=color:#bf616a>request</span><span>: Request, </span><span style=color:#bf616a>next</span><span>: Next) -> Response {
+</span><span>    </span><span style=color:#65737e>// do something
+</span><span>    </span><span style=color:#b48ead>let</span><span> response = next.</span><span style=color:#96b5b4>run</span><span>(request).await;
+</span><span>
+</span><span>    response
+</span><span>}
+</span></code></pre><p>完整代码参考<a href=https://github.com/spring-rs/spring-rs/tree/master/examples/web-middleware-example><code>web-middleware-example</code></a><div class="docs-navigation d-flex justify-content-between"><a href=https://spring-rs.github.io/zh/docs/getting-started/config/> <div class="card my-1"><div class="card-body py-2">← 加载配置</div></div> </a><a class=ms-auto href=https://spring-rs.github.io/zh/docs/help/auto-reload/> <div class="card my-1"><div class="card-body py-2">自动热重启 →</div></div> </a></div></main></div></div></div><script async crossorigin issue-term=pathname label=comment repo=spring-rs/spring-rs.github.io src=https://utteranc.es/client.js theme=github-light></script><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Released under the MIT License. Powered by <a href=https://github.com/holmofy>holmofy</a></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.rust-lang.org/policies/code-of-conduct>Code of Conduct</a></ul></div></div></div></footer><script defer src=https://spring-rs.github.io/js/main.js></script>

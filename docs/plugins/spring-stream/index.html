@@ -1,0 +1,181 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://spring-rs.github.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><meta content=9BE3AFA1A1AE6AF5B38F990F208A4EE1 name=msvalidate.01><title>spring-stream Plugin | spring-rs</title><meta content="How to use spring-stream plugin" name=description><link href=https://spring-rs.github.io/docs/plugins/spring-stream/ rel=canonical><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://spring-rs.github.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Docs",
+            "item": "https://spring-rs.github.io/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Plugins",
+            "item": "https://spring-rs.github.io/docs/plugins/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Spring Stream",
+            "item": "https://spring-rs.github.io/docs/plugins/spring-stream/"
+          },
+        
+      
+    
+  }
+</script><script>var _hmt=_hmt||[];(()=>{let c=`script`;var a=document.createElement(c);a.src=`https://hm.baidu.com/hm.js?2fd7792d4246d07ebbd9db04334ac94d`;var b=document.getElementsByTagName(c)[0];b.parentNode.insertBefore(a,b)})()</script><script>((a,b,c,d,e,f,g)=>{a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};f=b.createElement(d);f.async=1;f.src=`https://www.clarity.ms/tag/`+ e;g=b.getElementsByTagName(d)[0];g.parentNode.insertBefore(f,g)})(window,document,`clarity`,`script`,`nl0r1el6gp`)</script><meta content=#fff name=theme-color><meta content=#2b5797 name=msapplication-TileColor><link href=https://spring-rs.github.io/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://spring-rs.github.io/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://spring-rs.github.io/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link color=#5bbad5 href=https://spring-rs.github.io/safari-pinned-tab.svg rel=mask-icon><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://spring-rs.github.io>spring-rs</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class="nav-item dropdown"><a class=nav-link href=#> <svg viewbox="0 0 1024 1024" fill=currentColor height=20 version=1.1 width=20 xmlns=http://www.w3.org/2000/svg><path d="M549.12 643.2l-108.373333-107.093333 1.28-1.28c74.24-82.773333 127.146667-177.92 158.293333-278.613334H725.333333V170.666667H426.666667V85.333333h-85.333334v85.333334H42.666667v84.906666h476.586666A673.834667 673.834667 0 0 1 384 484.266667a672.853333 672.853333 0 0 1-98.56-142.933334h-85.333333c31.146667 69.546667 73.813333 135.253333 127.146666 194.56L110.293333 750.293333 170.666667 810.666667l213.333333-213.333334 132.693333 132.693334 32.426667-86.826667zM789.333333 426.666667h-85.333333l-192 512h85.333333l48-128h202.666667L896 938.666667h85.333333l-192-512z m-112 298.666666L746.666667 540.373333 816 725.333333h-138.666667z"></path></svg> </a> <div class=dropdown-menu><a class=dropdown-item href=https://spring-rs.github.io/zh/docs/plugins/spring-stream/>中文</a></div><li class=nav-item><a class=nav-link href=https://github.com/spring-rs/spring-rs><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item docs active"><a class=nav-link href=https://spring-rs.github.io/docs/getting-started/introduction/>Docs</a><li class=nav-item><a class=nav-link href=https://spring-rs.github.io/blog/>Blog</a></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input aria-label="Search docs..." class="form-control is-search" placeholder="Search docs..." autocomplete=off id=userinput type=search><div class="shadow bg-white rounded" id=suggestions></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav aria-label="Main navigation" class=docs-links><h3>Getting Started</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/docs/getting-started/introduction/>Introduction</a><li><a class=docs-link href=https://spring-rs.github.io/docs/getting-started/quick-start/>Quick Start</a><li><a class=docs-link href=https://spring-rs.github.io/docs/getting-started/di/>Dependency inject</a><li><a class=docs-link href=https://spring-rs.github.io/docs/getting-started/config/>Load Configuration</a></ul><h3>Plugins</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-web/>spring-web Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-sqlx/>spring-sqlx Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-postgres/>spring-postgres Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-sea-orm/>spring-sea-orm Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-redis/>spring-redis Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-job/>spring-job Plugin</a><li><a class="docs-link active" href=https://spring-rs.github.io/docs/plugins/spring-stream/>spring-stream Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-mail/>spring-mail Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-logger/>logger Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/spring-opentelemetry/>opentelemetry Plugin</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/plugin-by-self/>Writing your own plugins</a><li><a class=docs-link href=https://spring-rs.github.io/docs/plugins/contribute-plugins/>Community contributed plugins</a></ul><h3>Help</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/docs/help/auto-reload/>Auto-Reloading Development Server</a><li><a class=docs-link href=https://spring-rs.github.io/docs/help/faq/>FAQ</a></ul></nav></div><nav aria-label="Secondary navigation" class="docs-toc d-none d-xl-block col-xl-3"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>spring-stream Plugin</h1><p class=lead>spring-stream is based on <a href=https://github.com/SeaQL/sea-streamer target=_blank>sea-streamer</a><p><a href=https://crates.io/crates/spring-stream><img alt=crates.io src=https://img.shields.io/crates/v/spring-stream.svg></a> <a href=https://docs.rs/spring-stream><img alt=Documentation src=https://docs.rs/spring-stream/badge.svg></a><h2 id=dependencies>Dependencies</h2><pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span style=color:#bf616a>spring-stream </span><span>= { </span><span style=color:#bf616a>version </span><span>= "</span><span style=color:#a3be8c>&LTversion></span><span>", </span><span style=color:#bf616a>features</span><span>=["</span><span style=color:#a3be8c>file</span><span>"] }
+</span></code></pre><p>spring-stream supports four message storages: <code>file</code>, <code>stdio</code>, <code>redis</code>, and <code>kafka</code>.<p>optional features: <code>json</code>.<h2 id=configuration-items>Configuration items</h2><pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span>[stream]
+</span><span style=color:#bf616a>uri </span><span>= "</span><span style=color:#a3be8c>file://./stream</span><span>"   </span><span style=color:#65737e># StreamerUri data stream address
+</span></code></pre><p>StreamUri supports file, stdio, redis, and kafka. For the format of uri, please refer to <a href=https://docs.rs/sea-streamer/latest/sea_streamer/struct.StreamerUri.html>StreamerUri</a>.<ul><li>stdio is suitable for command line projects.<li>file is suitable for stand-alone deployment projects.<li>redis is suitable for distributed deployment projects. Redis5.0 provides stream data structure, so the redis version is required to be greater than 5.0. For details, please refer to <a href=https://redis.io/docs/latest/develop/data-types/streams/>redis stream official documentation</a>.<li>Kafka is suitable for distributed deployment projects with larger message volumes. Kafka can be replaced with <a href=https://github.com/redpanda-data/redpanda>redpanda</a>, which is a high-performance message middleware written in C++ and compatible with the kafka protocol. It can completely get rid of the JVM that Kafka relies on.</ul><h3 id=detailed-stream-configuration>Detailed stream configuration</h3><pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span style=color:#65737e># File stream configuration
+</span><span>[stream.file]
+</span><span style=color:#bf616a>connect </span><span>= { </span><span style=color:#bf616a>create_file </span><span>= "</span><span style=color:#a3be8c>CreateIfNotExists</span><span>" }
+</span><span>
+</span><span style=color:#65737e># Standard stream configuration
+</span><span>[stream.stdio]
+</span><span style=color:#bf616a>connect </span><span>= { </span><span style=color:#bf616a>loopback </span><span>= </span><span style=color:#d08770>false </span><span>}
+</span><span>
+</span><span style=color:#65737e># Redis stream configuration
+</span><span>[stream.redis]
+</span><span style=color:#bf616a>connect </span><span>= { </span><span style=color:#bf616a>db</span><span>=</span><span style=color:#d08770>0</span><span>,</span><span style=color:#bf616a>username</span><span>="</span><span style=color:#a3be8c>user</span><span>",</span><span style=color:#bf616a>password</span><span>="</span><span style=color:#a3be8c>passwd</span><span>" }
+</span><span>
+</span><span style=color:#65737e># Kafka stream configuration
+</span><span>[stream.kafka]
+</span><span style=color:#bf616a>connect </span><span>= { </span><span style=color:#bf616a>sasl_options</span><span>={</span><span style=color:#bf616a>mechanism</span><span>="</span><span style=color:#a3be8c>Plain</span><span>",</span><span style=color:#bf616a>username</span><span>="</span><span style=color:#a3be8c>user</span><span>",</span><span style=color:#bf616a>password</span><span>="</span><span style=color:#a3be8c>passwd</span><span>"}}
+</span></code></pre><h3 id=send-message>Send message</h3><p><code>StreamPlugin</code> registers a <code>Producer</code> for sending messages. If you need to send messages in json format, you need to add the <code>json</code> feature in the dependencies:<pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span style=color:#bf616a>spring-stream </span><span>= { </span><span style=color:#bf616a>version </span><span>= "</span><span style=color:#a3be8c>0.1.1</span><span>", </span><span style=color:#bf616a>features</span><span>=["</span><span style=color:#a3be8c>file</span><span>","</span><span style=color:#a3be8c>json</span><span>"] }
+</span></code></pre><pre class=language-rust data-lang=rust data-linenos style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><table><tbody><tr><td>1<td><span style=color:#b48ead>use </span><span>anyhow::Context;
+</span><tr><td>2<td><span style=color:#b48ead>use </span><span>serde_json::json;
+</span><tr><td>3<td><span style=color:#b48ead>use </span><span>spring::{auto_config, App};
+</span><tr><td>4<td><span style=color:#b48ead>use </span><span>spring_stream::{Producer, StreamPlugin};
+</span><tr><td>5<td><span style=color:#b48ead>use </span><span>spring_web::error::Result;
+</span><tr><td>6<td><span style=color:#b48ead>use </span><span>spring_web::get;
+</span><tr><td>7<td><span style=color:#b48ead>use </span><span>spring_web::{
+</span><tr><td>8<td><span>    axum::response::{IntoResponse, Json},
+</span><tr><td>9<td><span>    extractor::Component,
+</span><tr><td>10<td><span>    WebConfigurator, WebPlugin,
+</span><tr><td>11<td><span>};
+</span><tr><td>12<td><span style=color:#b48ead>use </span><span>std::time::SystemTime;
+</span><tr><td>13<td><span>
+</span><tr><td>14<td><span>#[</span><span style=color:#bf616a>auto_config</span><span>(WebConfigurator)]
+</span><tr><td>15<td><span>#[</span><span style=color:#bf616a>tokio</span><span>::</span><span style=color:#bf616a>main</span><span>]
+</span><tr><td>16<td><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>main</span><span>() {
+</span><tr><td>17<td><span>    App::new()
+</span><tr><td>18<td><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(StreamPlugin)
+</span><tr><td>19<td><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(WebPlugin)
+</span><tr><td>20<td><span>        .</span><span style=color:#96b5b4>run</span><span>()
+</span><tr><td>21<td><span>        .await
+</span><tr><td>22<td><span>}
+</span><tr><td>23<td><span>
+</span><tr><td>24<td><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/</span><span>")]
+</span><tr><td>25<td><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>send_msg</span><span>(Component(</span><span style=color:#bf616a>producer</span><span>): Component&LTProducer>) -> Result&LTimpl IntoResponse> {
+</span><tr><td>26<td><span>    </span><span style=color:#b48ead>let</span><span> now = SystemTime::now();
+</span><tr><td>27<td><span>    </span><span style=color:#b48ead>let</span><span> json = json!({
+</span><tr><td>28<td><span>        "</span><span style=color:#a3be8c>success</span><span>": </span><span style=color:#d08770>true</span><span>,
+</span><tr><td>29<td><span>        "</span><span style=color:#a3be8c>msg</span><span>": format!("</span><span style=color:#a3be8c>This message was sent at </span><span style=color:#d08770>{:?}</span><span>", now),
+</span><tr><td>30<td><span>    });
+</span><tr><td>31<td><span>    </span><span style=color:#b48ead>let</span><span> resp = producer
+</span><tr><td>32<td><span>        .</span><span style=color:#96b5b4>send_json</span><span>("</span><span style=color:#a3be8c>topic</span><span>", json)
+</span><tr><td>33<td><span>        .await
+</span><tr><td>34<td><span>        .</span><span style=color:#96b5b4>context</span><span>("</span><span style=color:#a3be8c>send msg failed</span><span>")?;
+</span><tr><td>35<td><span>
+</span><tr><td>36<td><span>    </span><span style=color:#b48ead>let</span><span> seq = resp.</span><span style=color:#96b5b4>sequence</span><span>();
+</span><tr><td>37<td><span>    Ok(Json(json!({"</span><span style=color:#a3be8c>seq</span><span>":seq})))
+</span><tr><td>38<td><span>}
+</span><tr><td>39<td><span>
+</span></table></code></pre><h3 id=consume-messages>Consume messages</h3><p><code>spring-stream</code> provides a process macro called <code>stream_listener</code> to subscribe to messages from a specified topic. The code is as follows:<pre class=language-rust data-lang=rust data-linenos style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><table><tbody><tr><td>1<td><span style=color:#b48ead>use </span><span>spring::tracing;
+</span><tr><td>2<td><span style=color:#b48ead>use </span><span>spring::App;
+</span><tr><td>3<td><span style=color:#b48ead>use </span><span>spring_stream::consumer::Consumers;
+</span><tr><td>4<td><span style=color:#b48ead>use </span><span>spring_stream::extractor::Json;
+</span><tr><td>5<td><span style=color:#b48ead>use </span><span>spring_stream::file::AutoStreamReset;
+</span><tr><td>6<td><span style=color:#b48ead>use </span><span>spring_stream::handler::TypedConsumer;
+</span><tr><td>7<td><span style=color:#b48ead>use </span><span>spring_stream::stream_listener;
+</span><tr><td>8<td><span style=color:#b48ead>use </span><span>spring_stream::{file::FileConsumerOptions, StreamConfigurator, StreamPlugin};
+</span><tr><td>9<td><span style=color:#b48ead>use </span><span>stream_file_example::Payload;
+</span><tr><td>10<td><span>
+</span><tr><td>11<td><span>#[</span><span style=color:#bf616a>tokio</span><span>::</span><span style=color:#bf616a>main</span><span>]
+</span><tr><td>12<td><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>main</span><span>() {
+</span><tr><td>13<td><span>    App::new()
+</span><tr><td>14<td><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(StreamPlugin)
+</span><tr><td>15<td><span>        .</span><span style=color:#96b5b4>add_consumer</span><span>(</span><span style=color:#96b5b4>consumers</span><span>())
+</span><tr><td>16<td><span>        .</span><span style=color:#96b5b4>run</span><span>()
+</span><tr><td>17<td><span>        .await
+</span><tr><td>18<td><span>}
+</span><tr><td>19<td><span>
+</span><tr><td>20<td><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>consumers</span><span>() -> Consumers {
+</span><tr><td>21<td><span>    Consumers::new().</span><span style=color:#96b5b4>typed_consumer</span><span>(listen_topic_do_something)
+</span><tr><td>22<td><span>}
+</span><tr><td>23<td><span>
+</span><tr><td>24<td><span>#[</span><span style=color:#bf616a>stream_listener</span><span>(
+</span><tr><td>25<td><span>    "</span><span style=color:#a3be8c>topic</span><span>",
+</span><tr><td>26<td><span>    "</span><span style=color:#a3be8c>topic2</span><span>",
+</span><tr><td>27<td><span>    file_consumer_options = fill_file_consumer_options
+</span><tr><td>28<td><span>)]
+</span><tr><td>29<td><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>listen_topic_do_something</span><span>(Json(</span><span style=color:#bf616a>payload</span><span>): Json&LTPayload>) {
+</span><tr><td>30<td><span>    tracing::info!("</span><span style=color:#a3be8c>{:#?}</span><span>", payload);
+</span><tr><td>31<td><span>}
+</span><tr><td>32<td><span>
+</span><tr><td>33<td><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>fill_file_consumer_options</span><span>(</span><span style=color:#bf616a>opts</span><span>: &</span><span style=color:#b48ead>mut</span><span> FileConsumerOptions) {
+</span><tr><td>34<td><span>    opts.</span><span style=color:#96b5b4>set_auto_stream_reset</span><span>(AutoStreamReset::Earliest);
+</span><tr><td>35<td><span>}
+</span><tr><td>36<td><span>
+</span></table></code></pre><p>View the complete example code <a href=https://github.com/spring-rs/spring-rs/tree/master/examples/stream-file-example>stream-file-example</a>, <a href=https://github.com/spring-rs/spring-rs/tree/master/examples/stream-redis-example>stream-redis-example</a>, <a href=https://github.com/spring-rs/spring-rs/tree/master/examples/stream-kafka-example>stream-kafka-example</a><h2 id=read-configuration>Read configuration</h2><p>You can use <a href=https://docs.rs/spring-stream/latest/spring_stream/extractor/struct.Config.html><code>Config</code></a> to extract the configuration in toml. The usage is exactly the same as <a href=https://spring-rs.github.io/zh/docs/plugins/spring-web/#du-qu-pei-zhi><code>spring-web</code></a>.<pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span>#[</span><span style=color:#bf616a>derive</span><span>(Debug, Configurable, Deserialize)]
+</span><span>#[</span><span style=color:#bf616a>config_prefix </span><span>= "</span><span style=color:#a3be8c>custom</span><span>"]
+</span><span style=color:#b48ead>struct </span><span>CustomConfig {
+</span><span>    </span><span style=color:#bf616a>a</span><span>: </span><span style=color:#b48ead>u32</span><span>,
+</span><span>    </span><span style=color:#bf616a>b</span><span>: </span><span style=color:#b48ead>bool</span><span>,
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>stream_listener</span><span>("</span><span style=color:#a3be8c>topic</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>use_toml_config</span><span>(Config(</span><span style=color:#bf616a>conf</span><span>): Config&LTCustomConfig>) -> impl IntoResponse {
+</span><span>    format!("</span><span style=color:#a3be8c>a=</span><span style=color:#d08770>{}</span><span style=color:#a3be8c>, b=</span><span style=color:#d08770>{}</span><span>", conf.a, conf.b)
+</span><span>}
+</span></code></pre><p>Add the corresponding configuration to your configuration file:<pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span>[custom]
+</span><span style=color:#bf616a>a </span><span>= </span><span style=color:#d08770>1
+</span><span style=color:#bf616a>b </span><span>= </span><span style=color:#d08770>true
+</span></code></pre><div class="docs-navigation d-flex justify-content-between"><a href=https://spring-rs.github.io/docs/getting-started/config/> <div class="card my-1"><div class="card-body py-2">← Load Configuration</div></div> </a><a class=ms-auto href=https://spring-rs.github.io/docs/help/auto-reload/> <div class="card my-1"><div class="card-body py-2">Auto-Reloading Development Server →</div></div> </a></div></main></div></div></div><script async crossorigin issue-term=pathname label=comment repo=spring-rs/spring-rs.github.io src=https://utteranc.es/client.js theme=github-light></script><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Released under the MIT License. Powered by <a href=https://github.com/holmofy>holmofy</a></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.rust-lang.org/policies/code-of-conduct>Code of Conduct</a></ul></div></div></div></footer><script defer src=https://spring-rs.github.io/js/main.js></script><script defer src=https://spring-rs.github.io/plugins/elasticlunr.min.js></script><script defer src=https://spring-rs.github.io/search_index.en.js></script><script defer src=https://spring-rs.github.io/js/search.js></script>

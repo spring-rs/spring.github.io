@@ -1,0 +1,156 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://spring-rs.github.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><meta content=9BE3AFA1A1AE6AF5B38F990F208A4EE1 name=msvalidate.01><title>快速上手</title><meta content=一个页面介绍如何快速上手spring-rs name=description><link href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/ rel=canonical><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://spring-rs.github.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Zh",
+            "item": "https://spring-rs.github.io/zh/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Docs",
+            "item": "https://spring-rs.github.io/zh/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Getting Started",
+            "item": "https://spring-rs.github.io/zh/docs/getting-started/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  5 ,
+            "name": "Quick Start",
+            "item": "https://spring-rs.github.io/zh/docs/getting-started/quick-start/"
+          },
+        
+      
+    
+  }
+</script><script>var _hmt=_hmt||[];(()=>{let c=`script`;var a=document.createElement(c);a.src=`https://hm.baidu.com/hm.js?2fd7792d4246d07ebbd9db04334ac94d`;var b=document.getElementsByTagName(c)[0];b.parentNode.insertBefore(a,b)})()</script><script>((a,b,c,d,e,f,g)=>{a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};f=b.createElement(d);f.async=1;f.src=`https://www.clarity.ms/tag/`+ e;g=b.getElementsByTagName(d)[0];g.parentNode.insertBefore(f,g)})(window,document,`clarity`,`script`,`nl0r1el6gp`)</script><meta content=#fff name=theme-color><meta content=#2b5797 name=msapplication-TileColor><link href=https://spring-rs.github.io/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://spring-rs.github.io/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://spring-rs.github.io/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link color=#5bbad5 href=https://spring-rs.github.io/safari-pinned-tab.svg rel=mask-icon><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://spring-rs.github.io/zh>spring-rs</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class="nav-item dropdown"><a class=nav-link href=#> <svg viewbox="0 0 1024 1024" fill=currentColor height=20 version=1.1 width=20 xmlns=http://www.w3.org/2000/svg><path d="M549.12 643.2l-108.373333-107.093333 1.28-1.28c74.24-82.773333 127.146667-177.92 158.293333-278.613334H725.333333V170.666667H426.666667V85.333333h-85.333334v85.333334H42.666667v84.906666h476.586666A673.834667 673.834667 0 0 1 384 484.266667a672.853333 672.853333 0 0 1-98.56-142.933334h-85.333333c31.146667 69.546667 73.813333 135.253333 127.146666 194.56L110.293333 750.293333 170.666667 810.666667l213.333333-213.333334 132.693333 132.693334 32.426667-86.826667zM789.333333 426.666667h-85.333333l-192 512h85.333333l48-128h202.666667L896 938.666667h85.333333l-192-512z m-112 298.666666L746.666667 540.373333 816 725.333333h-138.666667z"></path></svg> </a> <div class=dropdown-menu><a class=dropdown-item href=https://spring-rs.github.io/docs/getting-started/quick-start/>English</a></div><li class=nav-item><a class=nav-link href=https://github.com/spring-rs/spring-rs><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item docs active"><a class=nav-link href=https://spring-rs.github.io/zh/docs/getting-started/introduction/>文档</a><li class=nav-item><a class=nav-link href=https://spring-rs.github.io/zh/blog/>博客</a></ul><div class="break order-6 d-md-none"></div></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav aria-label="Main navigation" class=docs-links><h3>入门指南</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/introduction/>介绍</a><li><a class="docs-link active" href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/>快速上手</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/di/>依赖注入</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/config/>加载配置</a></ul><h3>插件</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-web/>spring-web插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-sqlx/>spring-sqlx插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-postgres/>spring-postgres插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-sea-orm/>spring-sea-orm插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-redis/>spring-redis插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-job/>spring-job插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-stream/>spring-stream插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-mail/>spring-mail插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-logger/>logger插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-opentelemetry/>opentelemetry插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/plugin-by-self/>编写自己的插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/contribute-plugins/>社区贡献的插件</a></ul><h3>帮助</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/help/auto-reload/>自动热重启</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/help/faq/>常见问题</a></ul></nav></div><nav aria-label="Secondary navigation" class="docs-toc d-none d-xl-block col-xl-3"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/#zhun-bei-huan-jing>准备环境</a><li><a href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/#tian-jia-yi-lai>添加依赖</a><li><a href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/#bian-xie-dai-ma>编写代码</a><li><a href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/#dui-ying-yong-jin-xing-pei-zhi>对应用进行配置</a><li><a href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/#yun-xing>运行</a></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>快速上手</h1><p class=lead>在这个页面，我会介绍spring-rs如何快速上手spring-rs<h2 id=zhun-bei-huan-jing>准备环境</h2><ul><li>rust ≥ 1.75</ul><h2 id=tian-jia-yi-lai>添加依赖</h2><p>在你的<code>Cargo.toml</code>文件中添加下面的依赖<pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span>[dependencies]
+</span><span style=color:#65737e># spring提供了核心的插件系统和有用的过程宏
+</span><span style=color:#bf616a>spring </span><span>= "</span><span style=color:#a3be8c>&LTversion></span><span>"
+</span><span style=color:#65737e># 如果你准备写web应用就添加spring-web
+</span><span style=color:#bf616a>spring-web </span><span>= "</span><span style=color:#a3be8c>&LTversion></span><span>"
+</span><span style=color:#65737e># 如果应用需要和数据库交互就添加spring-sqlx
+</span><span style=color:#bf616a>spring-sqlx </span><span>= { </span><span style=color:#bf616a>version</span><span>="</span><span style=color:#a3be8c>&LTversion></span><span>", </span><span style=color:#bf616a>features </span><span>= ["</span><span style=color:#a3be8c>mysql</span><span>"] }
+</span><span style=color:#65737e># spring-rs项目默认使用tokio异步运行时
+</span><span style=color:#bf616a>tokio </span><span>= "</span><span style=color:#a3be8c>1</span><span>"
+</span></code></pre><h2 id=bian-xie-dai-ma>编写代码</h2><pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span style=color:#b48ead>use </span><span>anyhow::Context;
+</span><span style=color:#b48ead>use </span><span>spring::{auto_config, App};
+</span><span style=color:#b48ead>use </span><span>spring_sqlx::{
+</span><span>    sqlx::{</span><span style=color:#bf616a>self</span><span>, Row},
+</span><span>    ConnectPool, SqlxPlugin,
+</span><span>};
+</span><span style=color:#b48ead>use </span><span>spring_web::{
+</span><span>    axum::response::IntoResponse,
+</span><span>    error::Result,
+</span><span>    extractor::{Component, Path},
+</span><span>    WebConfigurator, WebPlugin,
+</span><span>};
+</span><span style=color:#b48ead>use </span><span>spring_web::{get, route};
+</span><span>
+</span><span style=color:#65737e>// 主函数入口
+</span><span>#[</span><span style=color:#bf616a>auto_config</span><span>(WebConfigurator)]   </span><span style=color:#65737e>// 自动扫描web router
+</span><span>#[</span><span style=color:#bf616a>tokio</span><span>::</span><span style=color:#bf616a>main</span><span>]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>main</span><span>() {
+</span><span>    App::new()
+</span><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(SqlxPlugin)  </span><span style=color:#65737e>// 添加插件
+</span><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(WebPlugin)
+</span><span>        .</span><span style=color:#96b5b4>run</span><span>()
+</span><span>        .await
+</span><span>}
+</span><span>
+</span><span style=color:#65737e>// get宏指定Http Method和请求路径。spring-rs还提供了post、delete、patch等其他标准http method宏
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>hello_world</span><span>() -> impl IntoResponse {
+</span><span>    "</span><span style=color:#a3be8c>hello world</span><span>"
+</span><span>}
+</span><span>
+</span><span style=color:#65737e>// 也可以使用route宏指定Http Method和请求路径。Path从HTTP请求中提取请求路径中的参数
+</span><span>#[</span><span style=color:#bf616a>route</span><span>("</span><span style=color:#a3be8c>/hello/:name</span><span>", method = "</span><span style=color:#a3be8c>GET</span><span>", method = "</span><span style=color:#a3be8c>POST</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>hello</span><span>(Path(</span><span style=color:#bf616a>name</span><span>): Path&LTString>) -> impl IntoResponse {
+</span><span>    format!("</span><span style=color:#a3be8c>hello </span><span style=color:#d08770>{name}</span><span>")
+</span><span>}
+</span><span>
+</span><span style=color:#65737e>// Component可以抽取由Sqlx插件在AppState中的注册的连接池
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/version</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>sqlx_request_handler</span><span>(Component(</span><span style=color:#bf616a>pool</span><span>): Component&LTConnectPool>) -> Result&LTString> {
+</span><span>    </span><span style=color:#b48ead>let</span><span> version = sqlx::query("</span><span style=color:#a3be8c>select version() as version</span><span>")
+</span><span>        .</span><span style=color:#96b5b4>fetch_one</span><span>(&pool)
+</span><span>        .await
+</span><span>        .</span><span style=color:#96b5b4>context</span><span>("</span><span style=color:#a3be8c>sqlx query failed</span><span>")?
+</span><span>        .</span><span style=color:#96b5b4>get</span><span>("</span><span style=color:#a3be8c>version</span><span>");
+</span><span>    Ok(version)
+</span><span>}
+</span></code></pre><h2 id=dui-ying-yong-jin-xing-pei-zhi>对应用进行配置</h2><p>在项目的根路径下创建一个<code>config</code>目录，这里会存储<code>spring-rs</code>的配置文件。<p>你可以在该目录下先创建一个<code>app.toml</code>文件，内容如下：<pre class=language-toml data-lang=toml style=color:#c0c5ce;background-color:#2b303b><code class=language-toml data-lang=toml><span>[web]
+</span><span style=color:#bf616a>port </span><span>= </span><span style=color:#d08770>8000                  </span><span style=color:#65737e># 配置web服务端口，如果不配置默认就是8080端口
+</span><span>
+</span><span>[sqlx]                       </span><span style=color:#65737e># 配置sqlx的数据库连接信息
+</span><span style=color:#bf616a>uri </span><span>= "</span><span style=color:#a3be8c>mysql://user:password@127.0.0.1:3306</span><span>"
+</span></code></pre><p><code>spring-rs</code>支持多环境配置：dev(开发)、test(测试)、prod(生产)，分别对应着<code>app-dev.toml</code>、<code>app-test.toml</code>、<code>app-prod.toml</code>三个配置文件。环境配置文件中的配置会覆盖<code>app.toml</code>主配置文件的配置项。<p><code>spring-rs</code>会根据<code>SPRING_ENV</code>环境变量激活对应环境的配置文件。<h2 id=yun-xing>运行</h2><p>编码完成，请确保你的数据库能正常连接，然后就让我们开始运行起来吧。<pre class=language-sh data-lang=sh style=color:#c0c5ce;background-color:#2b303b><code class=language-sh data-lang=sh><span style=color:#bf616a>cargo</span><span> run
+</span></code></pre><div class="docs-navigation d-flex justify-content-between"><a class=ms-auto href=https://spring-rs.github.io/zh/docs/plugins/spring-web/> <div class="card my-1"><div class="card-body py-2">spring-web插件 →</div></div> </a></div></main></div></div></div><script async crossorigin issue-term=pathname label=comment repo=spring-rs/spring-rs.github.io src=https://utteranc.es/client.js theme=github-light></script><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Released under the MIT License. Powered by <a href=https://github.com/holmofy>holmofy</a></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.rust-lang.org/policies/code-of-conduct>Code of Conduct</a></ul></div></div></div></footer><script defer src=https://spring-rs.github.io/js/main.js></script>

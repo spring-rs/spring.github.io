@@ -1,0 +1,180 @@
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta content="ie=edge" http-equiv=x-ua-compatible><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name=viewport><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 rel=preload type=font/woff2><link as=font crossorigin href=https://spring-rs.github.io/fonts/vendor/jost/jost-v4-latin-700.woff2 rel=preload type=font/woff2><link href=https://spring-rs.github.io/main.css rel=stylesheet><meta content="index, follow" name=robots><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=googlebot><meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name=bingbot><meta content=9BE3AFA1A1AE6AF5B38F990F208A4EE1 name=msvalidate.01><title>介绍</title><meta content=spring-rs是一个Rust编写的应用框架，类似于java生态的springboot name=description><link href=https://spring-rs.github.io/zh/docs/getting-started/introduction/ rel=canonical><script type=application/ld+json>
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          {
+            "@type": "ListItem",
+            "position":  1 ,
+            "name": "Home",
+            "item": "https://spring-rs.github.io/"
+          },
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  2 ,
+            "name": "Zh",
+            "item": "https://spring-rs.github.io/zh/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  3 ,
+            "name": "Docs",
+            "item": "https://spring-rs.github.io/zh/docs/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  4 ,
+            "name": "Getting Started",
+            "item": "https://spring-rs.github.io/zh/docs/getting-started/"
+          },
+        
+      
+        
+        
+        
+        
+        
+        
+        
+        
+          
+          
+          {
+            "@type": "ListItem",
+            "position":  5 ,
+            "name": "Introduction",
+            "item": "https://spring-rs.github.io/zh/docs/getting-started/introduction/"
+          },
+        
+      
+    
+  }
+</script><script>var _hmt=_hmt||[];(()=>{let c=`script`;var a=document.createElement(c);a.src=`https://hm.baidu.com/hm.js?2fd7792d4246d07ebbd9db04334ac94d`;var b=document.getElementsByTagName(c)[0];b.parentNode.insertBefore(a,b)})()</script><script>((a,b,c,d,e,f,g)=>{a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};f=b.createElement(d);f.async=1;f.src=`https://www.clarity.ms/tag/`+ e;g=b.getElementsByTagName(d)[0];g.parentNode.insertBefore(f,g)})(window,document,`clarity`,`script`,`nl0r1el6gp`)</script><meta content=#fff name=theme-color><meta content=#2b5797 name=msapplication-TileColor><link href=https://spring-rs.github.io/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=https://spring-rs.github.io/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=https://spring-rs.github.io/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link color=#5bbad5 href=https://spring-rs.github.io/safari-pinned-tab.svg rel=mask-icon><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" id=menu-btn type=checkbox><label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://spring-rs.github.io/zh>spring-rs</a><button aria-label="Toggle mode" class="btn btn-link order-2 order-md-4" id=mode type=button><span class=toggle-dark><svg class="feather feather-moon" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span> <span class=toggle-light><svg class="feather feather-sun" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><circle cx=12 cy=12 r=5></circle><line x1=12 x2=12 y1=1 y2=3></line><line x1=12 x2=12 y1=21 y2=23></line><line x1=4.22 x2=5.64 y1=4.22 y2=5.64></line><line x1=18.36 x2=19.78 y1=18.36 y2=19.78></line><line x1=1 x2=3 y1=12 y2=12></line><line x1=21 x2=23 y1=12 y2=12></line><line x1=4.22 x2=5.64 y1=19.78 y2=18.36></line><line x1=18.36 x2=19.78 y1=5.64 y2=4.22></line></svg></span></button><ul class="navbar-nav fork-me order-3 order-md-5"><li class="nav-item dropdown"><a class=nav-link href=#> <svg viewbox="0 0 1024 1024" fill=currentColor height=20 version=1.1 width=20 xmlns=http://www.w3.org/2000/svg><path d="M549.12 643.2l-108.373333-107.093333 1.28-1.28c74.24-82.773333 127.146667-177.92 158.293333-278.613334H725.333333V170.666667H426.666667V85.333333h-85.333334v85.333334H42.666667v84.906666h476.586666A673.834667 673.834667 0 0 1 384 484.266667a672.853333 672.853333 0 0 1-98.56-142.933334h-85.333333c31.146667 69.546667 73.813333 135.253333 127.146666 194.56L110.293333 750.293333 170.666667 810.666667l213.333333-213.333334 132.693333 132.693334 32.426667-86.826667zM789.333333 426.666667h-85.333333l-192 512h85.333333l48-128h202.666667L896 938.666667h85.333333l-192-512z m-112 298.666666L746.666667 540.373333 816 725.333333h-138.666667z"></path></svg> </a> <div class=dropdown-menu><a class=dropdown-item href=https://spring-rs.github.io/docs/getting-started/introduction/>English</a></div><li class=nav-item><a class=nav-link href=https://github.com/spring-rs/spring-rs><svg class="feather feather-github" viewbox="0 0 24 24" fill=none height=20 stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 width=20 xmlns=http://www.w3.org/2000/svg><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span class="ms-2 visually-hidden">GitHub</span></a></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class="nav-item docs active"><a class=nav-link href=https://spring-rs.github.io/zh/docs/getting-started/introduction/>文档</a><li class=nav-item><a class=nav-link href=https://spring-rs.github.io/zh/blog/>博客</a></ul><div class="break order-6 d-md-none"></div></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav aria-label="Main navigation" class=docs-links><h3>入门指南</h3><ul class=list-unstyled><li><a class="docs-link active" href=https://spring-rs.github.io/zh/docs/getting-started/introduction/>介绍</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/quick-start/>快速上手</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/di/>依赖注入</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/getting-started/config/>加载配置</a></ul><h3>插件</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-web/>spring-web插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-sqlx/>spring-sqlx插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-postgres/>spring-postgres插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-sea-orm/>spring-sea-orm插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-redis/>spring-redis插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-job/>spring-job插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-stream/>spring-stream插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-mail/>spring-mail插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-logger/>logger插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/spring-opentelemetry/>opentelemetry插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/plugin-by-self/>编写自己的插件</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/plugins/contribute-plugins/>社区贡献的插件</a></ul><h3>帮助</h3><ul class=list-unstyled><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/help/auto-reload/>自动热重启</a><li><a class=docs-link href=https://spring-rs.github.io/zh/docs/help/faq/>常见问题</a></ul></nav></div><nav aria-label="Secondary navigation" class="docs-toc d-none d-xl-block col-xl-3"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><h1>介绍</h1><div align=center><img alt=Logo src=https://raw.githubusercontent.com/spring-rs/spring-rs/refs/heads/master/docs/static/logo-rust.svg width=200><h3>spring-rs是Rust编写的应用框架，类似于java生态的SpringBoot</h3><p><a href=https://spring-rs.github.io/docs/getting-started/introduction/>English</a> ｜ 中文<p><a href=https://crates.io/crates/spring> <img alt=crates.io src=https://img.shields.io/crates/v/spring.svg> </a> <a href=https://docs.rs/spring> <img alt=Documentation src=https://docs.rs/spring/badge.svg> </a> <img alt=Documentation src=https://img.shields.io/crates/l/spring></div><p><b>spring-rs</b>是一个Rust编写的应用框架，强调约定大于服务，类似于java生态的SpringBoot。<b>spring-rs</b>提供了易于扩展的插件系统，用于整合Rust社区的优秀项目，例如axum、sqlx、sea-orm等。<p>相比于java生态的SpringBoot，spring-rs有更高的性能和更低的内存占用，让你彻底摆脱臃肿的JVM，轻装上阵。<h2 id=te-dian>特点</h2><ul><li>⚡️ 高性能: 得益于出色的Rust语言，<b>spring-rs</b>拥有与c/c++媲美的极致性能<li>🛡️ 高安全性: 相比C/C++，<b>spring-rs</b>使用的Rust语言提供了内存安全和线程安全的能力<li>🔨 轻量级: <b>spring-rs</b>的核心代码不超过5000行，打包的release版二进制文件也非常小巧<li>🔧 容易使用: <b>spring-rs</b>提供了清晰明了的API和可选的过程宏来简化开发<li>🔌 高可扩展性: <b>spring-rs</b>采用高扩展性的插件模式，用户可以自定义插件扩展程序功能<li>⚙️ 高可配置性: <b>spring-rs</b>用toml配置应用和插件，提升应用灵活性</ul><h2 id=jian-dan-de-li-zi>简单的例子</h2><p><strong>web</strong><pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span style=color:#b48ead>use </span><span>spring::{auto_config, App};
+</span><span style=color:#b48ead>use </span><span>spring_sqlx::{
+</span><span>    sqlx::{</span><span style=color:#bf616a>self</span><span>, Row},
+</span><span>    ConnectPool, SqlxPlugin
+</span><span>};
+</span><span style=color:#b48ead>use </span><span>spring_web::{get, route};
+</span><span style=color:#b48ead>use </span><span>spring_web::{
+</span><span>    error::Result, extractor::{Path, Component}, handler::TypeRouter, axum::response::IntoResponse, Router, 
+</span><span>    WebConfigurator, WebPlugin,
+</span><span>};
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>auto_config</span><span>(WebConfigurator)]
+</span><span>#[</span><span style=color:#bf616a>tokio</span><span>::</span><span style=color:#bf616a>main</span><span>]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>main</span><span>() {
+</span><span>    App::new()
+</span><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(SqlxPlugin)
+</span><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(WebPlugin)
+</span><span>        .</span><span style=color:#96b5b4>run</span><span>()
+</span><span>        .await
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>hello_world</span><span>() -> impl IntoResponse {
+</span><span>    "</span><span style=color:#a3be8c>hello world</span><span>"
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>route</span><span>("</span><span style=color:#a3be8c>/hello/:name</span><span>", method = "</span><span style=color:#a3be8c>GET</span><span>", method = "</span><span style=color:#a3be8c>POST</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>hello</span><span>(Path(</span><span style=color:#bf616a>name</span><span>): Path&LTString>) -> impl IntoResponse {
+</span><span>    format!("</span><span style=color:#a3be8c>hello </span><span style=color:#d08770>{name}</span><span>")
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>get</span><span>("</span><span style=color:#a3be8c>/version</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>sqlx_request_handler</span><span>(Component(</span><span style=color:#bf616a>pool</span><span>): Component&LTConnectPool>) -> Result&LTString> {
+</span><span>    </span><span style=color:#b48ead>let</span><span> version = sqlx::query("</span><span style=color:#a3be8c>select version() as version</span><span>")
+</span><span>        .</span><span style=color:#96b5b4>fetch_one</span><span>(&pool)
+</span><span>        .await
+</span><span>        .</span><span style=color:#96b5b4>context</span><span>("</span><span style=color:#a3be8c>sqlx query failed</span><span>")?
+</span><span>        .</span><span style=color:#96b5b4>get</span><span>("</span><span style=color:#a3be8c>version</span><span>");
+</span><span>    Ok(version)
+</span><span>}
+</span></code></pre><p><strong>任务调度</strong><pre class=language-rust data-lang=rust style=color:#c0c5ce;background-color:#2b303b><code class=language-rust data-lang=rust><span style=color:#b48ead>use </span><span>anyhow::Context;
+</span><span style=color:#b48ead>use </span><span>spring::{auto_config, App};
+</span><span style=color:#b48ead>use </span><span>spring_job::{cron, fix_delay, fix_rate};
+</span><span style=color:#b48ead>use </span><span>spring_job::{extractor::Component, JobConfigurator, JobPlugin};
+</span><span style=color:#b48ead>use </span><span>spring_sqlx::{
+</span><span>    sqlx::{</span><span style=color:#bf616a>self</span><span>, Row},
+</span><span>    ConnectPool, SqlxPlugin,
+</span><span>};
+</span><span style=color:#b48ead>use </span><span>std::time::{Duration, SystemTime};
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>auto_config</span><span>(JobConfigurator)]
+</span><span>#[</span><span style=color:#bf616a>tokio</span><span>::</span><span style=color:#bf616a>main</span><span>]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>main</span><span>() {
+</span><span>    App::new()
+</span><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(JobPlugin)
+</span><span>        .</span><span style=color:#96b5b4>add_plugin</span><span>(SqlxPlugin)
+</span><span>        .</span><span style=color:#96b5b4>run</span><span>()
+</span><span>        .await;
+</span><span>
+</span><span>    tokio::time::sleep(Duration::from_secs(</span><span style=color:#d08770>100</span><span>)).await;
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>cron</span><span>("</span><span style=color:#a3be8c>1/10 * * * * *</span><span>")]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>cron_job</span><span>(Component(</span><span style=color:#bf616a>db</span><span>): Component&LTConnectPool>) {
+</span><span>    </span><span style=color:#b48ead>let</span><span> time: String = sqlx::query("</span><span style=color:#a3be8c>select TO_CHAR(now(),'YYYY-MM-DD HH24:MI:SS') as time</span><span>")
+</span><span>        .</span><span style=color:#96b5b4>fetch_one</span><span>(&db)
+</span><span>        .await
+</span><span>        .</span><span style=color:#96b5b4>context</span><span>("</span><span style=color:#a3be8c>query failed</span><span>")
+</span><span>        .</span><span style=color:#96b5b4>unwrap</span><span>()
+</span><span>        .</span><span style=color:#96b5b4>get</span><span>("</span><span style=color:#a3be8c>time</span><span>");
+</span><span>    println!("</span><span style=color:#a3be8c>cron scheduled: </span><span style=color:#d08770>{:?}</span><span>", time)
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>fix_delay</span><span>(5)]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>fix_delay_job</span><span>() {
+</span><span>    </span><span style=color:#b48ead>let</span><span> now = SystemTime::now();
+</span><span>    </span><span style=color:#b48ead>let</span><span> datetime: sqlx::types::chrono::DateTime&LTsqlx::types::chrono::Local> = now.</span><span style=color:#96b5b4>into</span><span>();
+</span><span>    </span><span style=color:#b48ead>let</span><span> formatted_time = datetime.</span><span style=color:#96b5b4>format</span><span>("</span><span style=color:#a3be8c>%Y-%m-%d %H:%M:%S</span><span>");
+</span><span>    println!("</span><span style=color:#a3be8c>fix delay scheduled: </span><span style=color:#d08770>{}</span><span>", formatted_time)
+</span><span>}
+</span><span>
+</span><span>#[</span><span style=color:#bf616a>fix_rate</span><span>(5)]
+</span><span>async </span><span style=color:#b48ead>fn </span><span style=color:#8fa1b3>fix_rate_job</span><span>() {
+</span><span>    tokio::time::sleep(Duration::from_secs(</span><span style=color:#d08770>10</span><span>)).await;
+</span><span>    </span><span style=color:#b48ead>let</span><span> now = SystemTime::now();
+</span><span>    </span><span style=color:#b48ead>let</span><span> datetime: sqlx::types::chrono::DateTime&LTsqlx::types::chrono::Local> = now.</span><span style=color:#96b5b4>into</span><span>();
+</span><span>    </span><span style=color:#b48ead>let</span><span> formatted_time = datetime.</span><span style=color:#96b5b4>format</span><span>("</span><span style=color:#a3be8c>%Y-%m-%d %H:%M:%S</span><span>");
+</span><span>    println!("</span><span style=color:#a3be8c>fix rate scheduled: </span><span style=color:#d08770>{}</span><span>", formatted_time)
+</span><span>}
+</span></code></pre><h2 id=zhi-chi-de-cha-jian>支持的插件</h2><ul><li><input checked disabled type=checkbox> <img alt=spring-web src=https://img.shields.io/crates/v/spring-web.svg><a href=./spring-web/README.zh.md><code>spring-web</code></a>(基于<a href=https://github.com/tokio-rs/axum><code>axum</code></a>实现)<li><input checked disabled type=checkbox> <img alt=spring-sqlx src=https://img.shields.io/crates/v/spring-sqlx.svg><a href=./spring-sqlx/README.zh.md><code>spring-sqlx</code></a>(整合了<a href=https://github.com/launchbadge/sqlx><code>sqlx</code></a>)<li><input checked disabled type=checkbox> <img alt=spring-postgres src=https://img.shields.io/crates/v/spring-postgres.svg><a href=./spring-postgres/README.zh.md><code>spring-postgres</code></a>(整合了<a href=https://github.com/sfackler/rust-postgres><code>rust-postgres</code></a>)<li><input checked disabled type=checkbox> <img alt=spring-sea-orm src=https://img.shields.io/crates/v/spring-sea-orm.svg><a href=./spring-sea-orm/README.zh.md><code>spring-sea-orm</code></a>(整合了<a href=https://www.sea-ql.org/SeaORM/><code>sea-orm</code></a>)<li><input checked disabled type=checkbox> <img alt=spring-redis src=https://img.shields.io/crates/v/spring-redis.svg><a href=./spring-redis/README.zh.md><code>spring-redis</code></a>(整合了<a href=https://github.com/redis-rs/redis-rs><code>redis</code></a>)<li><input checked disabled type=checkbox> <img alt=spring-mail src=https://img.shields.io/crates/v/spring-mail.svg><a href=./spring-mail/README.zh.md><code>spring-mail</code></a>(整合了<a href=https://github.com/lettre/lettre><code>lettre</code></a>)<li><input checked disabled type=checkbox> <img alt=spring-job src=https://img.shields.io/crates/v/spring-job.svg><a href=./spring-job/README.zh.md><code>spring-job</code></a>(整合了<a href=https://github.com/mvniekerk/tokio-cron-scheduler><code>tokio-cron-scheduler</code></a>)<li><input checked disabled type=checkbox> <img alt=spring-stream src=https://img.shields.io/crates/v/spring-stream.svg><a href=./spring-stream/README.zh.md><code>spring-stream</code></a>(整合了<a href=https://github.com/SeaQL/sea-streamer><code>sea-streamer</code></a>实现redis-stream、kafka等消息处理)<li><input checked disabled type=checkbox> <img alt=spring-opentelemetry src=https://img.shields.io/crates/v/spring-opentelemetry.svg><a href=(./spring-opentelemetry/README.zh.md)><code>spring-opentelemetry</code></a>(整合了<a href=https://github.com/open-telemetry/opentelemetry-rust><code>opentelemetry</code></a>实现logging、metrics、tracing全套可观测性)<li><input disabled type=checkbox> <code>spring-tarpc</code>(整合了<a href=https://github.com/google/tarpc><code>tarpc</code></a>实现RPC调用)</ul><h2 id=sheng-tai>生态</h2><ul><li><img alt=spring-sqlx-migration-plugin src=https://img.shields.io/crates/v/spring-sqlx-migration-plugin.svg> <a href=https://github.com/Phosphorus-M/spring-sqlx-migration-plugin><code>spring-sqlx-migration-plugin</code></a><li><img alt=spring-opendal src=https://img.shields.io/crates/v/spring-opendal.svg> <a href=https://github.com/spring-rs/contrib-plugins/tree/master/spring-opendal><code>spring-opendal</code></a></ul><p><a href=https://crates.io/crates/spring/reverse_dependencies>更多>></a></p><img alt="star history" src="https://api.star-history.com/svg?repos=spring-rs/spring-rs&type=Timeline" style=width:100%><h2 id=xiang-mu-shi-li>项目示例</h2><ul><li><a href=https://github.com/ralinejs/raline>Raline</a><li><a href=https://github.com/AutoWDS/autowds-backend>AutoWDS</a></ul><h2 id=qing-zuo-zhe-he-bei-cha>请作者喝杯茶</h2><table><tr><td><img alt=微信 height=400 src=https://github.com/user-attachments/assets/fe69c992-2da3-409e-9f61-507be436baeb><td><img alt=支付宝 height=400 src=https://github.com/user-attachments/assets/25668103-f41e-482f-925f-0007c40a917d></table><h2 id=jiao-liu-qun>交流群</h2><img alt=QQ交流群 height=400 src=https://github.com/user-attachments/assets/f9f2abcb-8d91-4aa1-a8f6-93e789339e45><h2 id=gong-xian>贡献</h2><p>也欢迎社区的大牛贡献自己的插件。 <a href=https://github.com/spring-rs/spring-rs>Contributing →</a><h2 id=bang-zhu>帮助</h2><p>点击这里可以查看<code>spring-rs</code>使用过程中遇到的常见问题 <a href=https://spring-rs.github.io/zh/docs/help/faq/>Help →</a><div class="docs-navigation d-flex justify-content-between"><a class=ms-auto href=https://spring-rs.github.io/zh/docs/plugins/spring-web/> <div class="card my-1"><div class="card-body py-2">spring-web插件 →</div></div> </a></div></main></div></div></div><script async crossorigin issue-term=pathname label=comment repo=spring-rs/spring-rs.github.io src=https://utteranc.es/client.js theme=github-light></script><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Released under the MIT License. Powered by <a href=https://github.com/holmofy>holmofy</a></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.rust-lang.org/policies/code-of-conduct>Code of Conduct</a></ul></div></div></div></footer><script defer src=https://spring-rs.github.io/js/main.js></script>
